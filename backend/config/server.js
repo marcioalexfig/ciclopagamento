@@ -1,3 +1,6 @@
+//para instalar o projeto do zero:
+//	abra o console, navegue ate a pasta que contem package.json
+//	$npm install 
 //para executar rode no console com o comando abaixo
 //npm run dev
 //ou
