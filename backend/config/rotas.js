@@ -9,7 +9,7 @@ module.exports = function( server ) {
 
 	//API Rotas - novo middleware do express na cadeia de middleware
 	const roteador = express.Router()
-	
+
 	//todas as requisicoes que tiverem /api serao repassadas
 	//parao roteador desta API atraves do express
 	server.use('/api', roteador)
@@ -27,5 +27,8 @@ module.exports = function( server ) {
 	//a url ficara /api/cicloPagamentos
 	cicloPagamentoService.register(roteador, '/cicloPagamentos')
 
-}
+	//rota do sumario
+	const sumarioCicloPagamento = require('../api/ciclopagamentoSumario/sumarioService')
+	roteador.route('/sumarioCicloPagamento').get(sumarioCicloPagamento.getSumario)
 
+}
